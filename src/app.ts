@@ -11,7 +11,7 @@ import proxyRoutes from './proxy-routes.js';
 const app: Express = express();
 
 // Apply global middleware
-app.use(compression() as express.RequestHandler);
+app.use(compression() as unknown as express.RequestHandler);
 app.use(helmet({
   contentSecurityPolicy: false // Disable CSP for proxy functionality
 }));
