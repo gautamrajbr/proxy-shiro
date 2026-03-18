@@ -12,7 +12,7 @@ const app: Express = express();
 
 // Apply global middleware
 app.use(compression() as unknown as express.RequestHandler);
-app.use(helmet({
+app.use((helmet as any)({
   contentSecurityPolicy: false // Disable CSP for proxy functionality
 }));
 app.use(express.json({ limit: '10mb' }));
